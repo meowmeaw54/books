@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독서 기록 및 추천</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <!-- 메인 화면 -->
+        <div id="mainScreen" class="screen active">
+            <header>
+                <h1>📚 나의 독서 기록</h1>
+                <button id="recommendBtn" class="nav-btn">책 추천 받기</button>
+            </header>
+            
+            <div class="add-record-section">
+                <h2>새 독서 기록 추가</h2>
+                <form id="recordForm">
+                    <input type="text" id="bookTitle" placeholder="책 제목을 입력하세요" required>
+                    <textarea id="bookReview" placeholder="감상이나 인상 깊은 구절을 적어보세요" rows="4" required></textarea>
+                    <button type="submit">기록 추가</button>
+                </form>
+            </div>
+            
+            <div class="records-section">
+                <h2>독서 기록</h2>
+                <div id="recordsList" class="records-list">
+                    <!-- 기록 카드들이 여기에 추가됩니다 -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- 추천 화면 -->
+        <div id="recommendScreen" class="screen">
+            <header>
+                <h1>📖 책 추천</h1>
+                <button id="backBtn" class="nav-btn">메인으로 돌아가기</button>
+            </header>
+            
+            <div class="keyword-section">
+                <h2>관심 키워드를 선택하세요</h2>
+                <div class="keywords">
+                    <button class="keyword-btn" data-keyword="소설">소설</button>
+                    <button class="keyword-btn" data-keyword="자기계발">자기계발</button>
+                    <button class="keyword-btn" data-keyword="과학">과학</button>
+                    <button class="keyword-btn" data-keyword="역사">역사</button>
+                    <button class="keyword-btn" data-keyword="철학">철학</button>
+                    <button class="keyword-btn" data-keyword="경제">경제</button>
+                    <button class="keyword-btn" data-keyword="예술">예술</button>
+                    <button class="keyword-btn" data-keyword="요리">요리</button>
+                </div>
+                <div class="custom-keyword">
+                    <input type="text" id="customKeyword" placeholder="직접 키워드 입력">
+                    <button id="searchCustomBtn">검색</button>
+                </div>
+            </div>
+            
+            <div class="recommendations-section">
+                <h2>추천 도서</h2>
+                <div id="loadingSpinner" class="loading hidden">검색 중...</div>
+                <div id="recommendationsList" class="recommendations-list">
+                    <!-- 추천 책들이 여기에 표시됩니다 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
